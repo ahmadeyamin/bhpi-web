@@ -15,7 +15,9 @@ class ManagementController extends Controller
      */
     public function index()
     {
-        //
+
+        $managements = Management::latest()->paginate(20);
+        return view('backend.management.index',compact('managements'));
     }
 
     /**
@@ -25,7 +27,7 @@ class ManagementController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.management.create');
     }
 
     /**
@@ -36,16 +38,25 @@ class ManagementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+
+        Management::create([
+            'name' => $request->name,
+        ]);
+
+        return redirect(route('admin.management.index'))->with('success','Management Added Successfully');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Management  $management
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Management $management)
+    public function show($id)
     {
         //
     }
@@ -53,33 +64,41 @@ class ManagementController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Management  $management
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Management $management)
     {
-        //
+        return view('backend.management.edit',compact('management'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Management  $management
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Management $management)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+        $management->update([
+            'name' => $request->name,
+        ]);
+
+        return redirect(route('admin.management.index'))->with('success','Management Updated Successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Management  $management
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Management $management)
+    public function destroy($id)
     {
         //
     }

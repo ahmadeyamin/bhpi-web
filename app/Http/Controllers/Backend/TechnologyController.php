@@ -15,7 +15,9 @@ class TechnologyController extends Controller
      */
     public function index()
     {
-        //
+
+        $technologies = Technology::withCount('teachers')->latest()->paginate(20);
+        return view('backend.technology.index',compact('technologies'));
     }
 
     /**
@@ -25,7 +27,7 @@ class TechnologyController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.technology.create');
     }
 
     /**
@@ -36,16 +38,37 @@ class TechnologyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+        if ($request->file('image')) {
+            $path = $request->file('image')->store('/technology',[
+                'disk' => 'public'
+            ]);
+        }else{
+            $path = null;
+        }
+
+
+        Technology::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'description' => $request->description,
+            'image' => $path,
+        ]);
+
+        return redirect(route('admin.technology.index'))->with('success','Technology Added Successfully');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Technology  $technology
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Technology $technology)
+    public function show($id)
     {
         //
     }
@@ -53,33 +76,53 @@ class TechnologyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Technology  $technology
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Technology $technology)
     {
-        //
+        return view('backend.technology.edit',compact('technology'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Technology  $technology
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Technology $technology)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+        if ($request->file('image')) {
+            $path = $request->file('image')->store('/technology',[
+                'disk' => 'public'
+            ]);
+        }else{
+            $path = $technology->image;
+        }
+
+        $technology->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'description' => $request->description,
+            'image' => $path,
+        ]);
+
+        return redirect(route('admin.technology.index'))->with('success','Technology Updated Successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Technology  $technology
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Technology $technology)
+    public function destroy($id)
     {
         //
     }

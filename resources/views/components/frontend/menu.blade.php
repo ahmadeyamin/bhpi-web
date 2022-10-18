@@ -15,6 +15,27 @@
         </a>
     </li>
    
+    <li class="sidebar-item">
+        <a href="{{ route('admin.teacher.index') }}" class='sidebar-link'>
+            <i data-feather="user" width="20"></i>
+            <span>Teachers</span>
+        </a>
+    </li>
+
+    <li class="sidebar-item">
+        <a href="{{ route('admin.technology.index') }}" class='sidebar-link'>
+            <i data-feather="user" width="20"></i>
+            <span>Technology</span>
+        </a>
+    </li>
+
+    <li class="sidebar-item">
+        <a href="{{ route('admin.management.index') }}" class='sidebar-link'>
+            <i data-feather="user" width="20"></i>
+            <span>Management</span>
+        </a>
+    </li>
+   
     {{-- <li class="sidebar-item has-sub">
         <a href="#" class='sidebar-link'>
             <i data-feather="triangle" width="20"></i>
