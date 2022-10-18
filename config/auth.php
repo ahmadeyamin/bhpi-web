@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Admin;
 use App\Models\Teacher;
 
 return [
@@ -38,6 +39,10 @@ return [
     */
 
     'guards' => [
+        'admin' => [
+            'driver'   => 'session',
+            'provider' => 'admins',
+        ],
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -67,9 +72,9 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        'teachers' => [
+        'admins' => [
             'driver' => 'eloquent',
-            'model' => Teacher::class,
+            'model' => Admin::class,
         ],
     ],
 
@@ -96,7 +101,7 @@ return [
             'throttle' => 60,
         ],
         'users' => [
-            'provider' => 'teachers',
+            'provider' => 'admins',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

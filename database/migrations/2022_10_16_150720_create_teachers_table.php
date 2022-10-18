@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
+            $table->integer('sort')->default(1);
             $table->string('avatar')->nullable();
             $table->foreignId('technology_id')->nullable()->constrained();
             $table->string('name');
