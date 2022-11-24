@@ -35,6 +35,13 @@
             <span>Management</span>
         </a>
     </li>
+
+    <li class="sidebar-item">
+        <a href="{{ route('admin.gallery.index') }}" class='sidebar-link'>
+            <i data-feather="image" width="20"></i>
+            <span>Gallery</span>
+        </a>
+    </li>
    
     {{-- <li class="sidebar-item has-sub">
         <a href="#" class='sidebar-link'>

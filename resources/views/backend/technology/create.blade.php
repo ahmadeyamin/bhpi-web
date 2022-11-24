@@ -23,6 +23,12 @@
                     <x-error name="name"/>
                 </div>
                 <div class="mb-3">
+                    <label class="form-label" for="slug">slug</label>
+                    <input class="form-control" value="{{ old('slug') }}" name="slug" id="slug" type="text" placeholder="Slug"
+                        data-sb-validations="required" />
+                    <x-error name="slug"/>
+                </div>
+                <div class="mb-3">
                     <label class="form-label" for="image">Image</label>
                     <input class="form-control" name="image" accept="image/*" id="image" type="file" />
                     <x-error name="image"/>
@@ -38,6 +44,27 @@
                     <input class="form-control" value="{{ old('email') }}" name="email" id="email" type="text" placeholder="Email"
                         data-sb-validations="required" />
                     <x-error name="email"/>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="results">Results URL</label>
+                    <input class="form-control" value="{{ old('results') }}" name="results" id="results" type="text" placeholder="results"
+                        data-sb-validations="required" />
+                    <x-error name="results"/>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="routine">routine URL</label>
+                    <input class="form-control" value="{{ old('routine') }}" name="routine" id="routine" type="text" placeholder="routine"
+                        data-sb-validations="required" />
+                    <x-error name="routine"/>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="syllabus">Syllabus URL</label>
+                    <input class="form-control" value="{{ old('syllabus') }}" name="syllabus" id="syllabus" type="text" placeholder="syllabus"
+                        data-sb-validations="required" />
+                    <x-error name="syllabus"/>
                 </div>
 
                 <div class="mb-3">

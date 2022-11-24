@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
+            $table->boolean("pined")->default(false);
+            $table->string("title");
+            $table->string("type");
+            $table->string("url");
             $table->timestamps();
         });
     }

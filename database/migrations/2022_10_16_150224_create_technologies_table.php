@@ -16,9 +16,13 @@ return new class extends Migration
         Schema::create('technologies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug');
             $table->string('image')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
+            $table->string('results')->nullable();
+            $table->string('syllabus')->nullable();
+            $table->string('routine')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
         });

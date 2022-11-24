@@ -27,7 +27,7 @@
                     <img src="{{asset('logo.png')}}" style="height: 150px" alt="" srcset="">
                 </div>
                 <div class="sidebar-menu h-75">
-                    @include('components.frontend.menu')
+                    @include('components.backend.menu')
 
                 </div>
                 

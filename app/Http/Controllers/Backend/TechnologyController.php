@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
 use App\Models\Technology;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class TechnologyController extends Controller
 {
@@ -40,6 +41,7 @@ class TechnologyController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'slug' => 'required|unique:technologies,slug',
         ]);
 
         if ($request->file('image')) {
@@ -53,8 +55,12 @@ class TechnologyController extends Controller
 
         Technology::create([
             'name' => $request->name,
+            'slug' => Str::slug($request->slug),
             'email' => $request->email,
             'phone' => $request->phone,
+            'results' => $request->results,
+            'routine' => $request->routine,
+            'syllabus' => $request->syllabus,
             'description' => $request->description,
             'image' => $path,
         ]);
@@ -95,6 +101,7 @@ class TechnologyController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'slug' => 'required|unique:technologies,slug,'.$technology->id,
         ]);
 
         if ($request->file('image')) {
@@ -107,8 +114,12 @@ class TechnologyController extends Controller
 
         $technology->update([
             'name' => $request->name,
+            'slug' => Str::slug($request->slug),
             'email' => $request->email,
             'phone' => $request->phone,
+            'results' => $request->results,
+            'routine' => $request->routine,
+            'syllabus' => $request->syllabus,
             'description' => $request->description,
             'image' => $path,
         ]);

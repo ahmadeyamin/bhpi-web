@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\NoticeController;
 use App\Http\Controllers\Backend\TeacherController;
 use App\Http\Controllers\Backend\Auth\LoginController;
+use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\ManagementController;
 use App\Http\Controllers\Backend\TechnologyController;
 
@@ -14,6 +15,7 @@ Route::group(['as' => 'admin.','middleware'=>['auth:admin']],function(){
     Route::resource('management', ManagementController::class);
     Route::resource('technology', TechnologyController::class);
     Route::resource('teacher', TeacherController::class);
+    Route::resource('gallery', GalleryController::class);
 });
 
 
