@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title','Home') - Aieal</title>
+    <title>@yield('title','Home') - Ahmad Eyamin</title>
 
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
 
@@ -110,10 +110,10 @@
             <footer class="main-content container-fluid bottom-0 position-absolute" style="width: -webkit-fill-available">
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-start">
-                        <p>{{date('Y')}} &copy; Aieal</p>
+                        <p>{{date('Y')}} &copy; Ahmad Eyamin</p>
                     </div>
                     <div class="float-end">
-                        <p>Crafted with <span class='text-danger'><i data-feather="heart"></i></span> by <a href="https://aieal.com">Aieal</a></p>
+                        <p>Crafted with <span class='text-danger'><i data-feather="heart"></i></span> by <a href="https://Ahmad Eyamin.com">Ahmad Eyamin</a></p>
                     </div>
                 </div>
             </footer>

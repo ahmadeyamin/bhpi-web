@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\FileController;
+use UniSharp\LaravelFilemanager\Lfm;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\NoticeController;
+use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\TeacherController;
 use App\Http\Controllers\Backend\Auth\LoginController;
-use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\ManagementController;
 use App\Http\Controllers\Backend\TechnologyController;
 
@@ -16,8 +18,13 @@ Route::group(['as' => 'admin.','middleware'=>['auth:admin']],function(){
     Route::resource('technology', TechnologyController::class);
     Route::resource('teacher', TeacherController::class);
     Route::resource('gallery', GalleryController::class);
-});
+    Route::get('files', [FileController::class,"index"])->name("files");
 
+ 
+});
+   Route::group(['prefix' => 'filemanager',"middleware"=>['auth:admin']], function () {
+        \UniSharp\LaravelFilemanager\Lfm::routes();
+    });
 
 Route::group(['as' => 'admin.'], function() {
 

@@ -42,6 +42,12 @@
             <span>Gallery</span>
         </a>
     </li>
+    <li class="sidebar-item">
+        <a href="{{ route('admin.files') }}" class='sidebar-link'>
+            <i data-feather="file" width="20"></i>
+            <span>File Manager</span>
+        </a>
+    </li>
    
     {{-- <li class="sidebar-item has-sub">
         <a href="#" class='sidebar-link'>
