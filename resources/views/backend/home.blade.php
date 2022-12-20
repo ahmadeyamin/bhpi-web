@@ -14,9 +14,9 @@
             <div class="card-body p-0">
                 <div class="d-flex flex-column">
                     <div class='px-3 py-3 d-flex justify-content-between'>
-                        <h3 class='card-title'>Article Write</h3>
+                        <h3 class='card-title'>Total Teachers</h3>
                         <div class="card-right d-flex align-items-center">
-                            <p>00</p>
+                            <p>{{$total_teachers}}</p>
                         </div>
                     </div>
                 </div>

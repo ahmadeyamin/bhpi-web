@@ -25,6 +25,7 @@
                           <th>Image</th>
                           <th>Title</th>
                           <th>Type</th>
+                          <th>In Banner</th>
                           <th>Date</th>
                           <th>Action</th>
                         </tr>
@@ -37,6 +38,7 @@
                             <td class="text-bold-500"><img src="{{$gallery->image_url}}" class="rounded" height="100px" width="170px" alt=""/></td>
                             <td>{{$gallery->title}}</td>
                             <td>{{$gallery->type}}</td>
+                            <td>{{$gallery->pined ? "Yes" : "No"}}</td>
                             <td>{{$gallery->created_at->diffForHumans()}}</td>
                             <td>
                                 <a href="{{ route('admin.gallery.edit',$gallery) }}">

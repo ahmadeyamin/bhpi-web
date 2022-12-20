@@ -26,13 +26,18 @@
         <div class="row mt-4">
             @foreach ($technology->teachers as $teacher)
             <div class="col-md-4 col-sm-6">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{$teacher->avatar_img}}" alt="Card image cap">
+                <div class="card mb-3">
+                    <img class="card-img-top" src="{{$teacher->avatar_img}}" alt="{{$teacher->name}}">
                     <div class="card-body">
                         <p class="text-muted">{{$teacher->title}}</p>
                         <h5 class="card-title">{{$teacher->name}} <small class="text-muted">({{$teacher->education}})</small></h5>
                         <a href="mail:{{$teacher->phone}}" class="card-text">Email: {{$teacher->email ?? "N\A"}}</a>
                         <a href="tel:{{$teacher->phone}}" class="card-text">Phone: {{$teacher->phone ?? "N\A"}}</a>
+
+                        <hr>
+                        <p class="text-muted mt-2">
+                            {{$teacher->message}}
+                        </p>
                     </div>
                   </div>
             </div>

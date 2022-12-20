@@ -22,8 +22,9 @@
 
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" >
     <link rel="stylesheet" href="{{asset('css/custom.css')}}" >
-
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}" >
+    <link rel="stylesheet" href="/css/fix.css" >
+
     <script src="{{asset('js/jquery-3.3.1.min.js')}}" ></script>
     <script src="{{asset('js/jquery.cascadingdropdown.min.js')}}" ></script>
     <script src="{{asset('js/popper.min.js')}}" ></script>
@@ -44,7 +45,7 @@
     <script src="{{asset('js/bootstrap.min.js')}}" ></script>
     
             
-    <script src="js/jquery.simpleTicker.js"></script>
+    <script src="{{ asset('js/jquery.simpleTicker.js') }}"></script>
     
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script> -->
@@ -55,7 +56,7 @@
 
     <script>
         $(document).ready(function () {
-            $(".npsylhet_ad").owlCarousel({
+            $("#carouselExampleIndicators").owlCarousel({
                 items: 1,
                 autoPlay: true,
                 autoplayTimeout: 4000,
@@ -80,7 +81,7 @@
     </script>
 </head>
 
-<body class="theme-theme-default site-22404 cnpi.chapainawabganj.gov.bd">
+<body class="theme-theme-default">
 
 
     
@@ -94,7 +95,7 @@
 
                         <div class="top-menu">
                             <div class="">
-                                <h2 class="h5 font-weight-bold mb- text-center">Website is under developement</h2>
+                                <h2 class="h5 font-weight-bold mb- text-center">Website is under development</h2>
 
                             </div>
 
@@ -115,41 +116,17 @@
 
 
 
-                        <div id="banner-slider" style=" position:relative;">
-
-
-
-                            <div id="carouselExampleIndicators" class="carousel slide carousel-fade w-100"
-                                data-ride="carousel">
-                                <div class="carousel-inner">
-
-
-                                    <div class="carousel-item  w-100 active">
-                                        <a title="" href="#">
-
-                                            <img style="height: 242px;object-fit: cover" src="{{asset('img/bhpi.jpg')}}" 
-                                                class="d-block w-100" alt="ভোলা পলিটেকনিক ইন্সটিটিউট">
-                                        </a>
+                        <div style="position:relative;">
+                            <div id="">
+                                <div class="owl-carousel owl-theme" id="carouselExampleIndicators">
+                                    @foreach (App\Models\Gallery::banner()->latest()->get() as $item)
+                                    <div class="w-100 @if($loop->first) active @endif">
+                                        <div title="{{$item->title}}">
+                                            <img style="height: 242px;object-fit: cover" src="{{$item->image_url}}" 
+                                                class="d-block w-100" alt="{{$item->title}}">
+                                        </div>
                                     </div>
-
-
-                                    <div class="carousel-item  w-100 ">
-                                        <a title="" href="#">
-                                            
-                                            <img style="height: 242px;object-fit: cover" src="{{asset('img/bhpi.jpg')}}" 
-                                                class="d-block w-100 " alt="ভোলা পলিটেকনিক ইনস্টিটিউট">
-                                        </a>
-                                    </div>
-
-                                    
-
-                                    <div class="carousel-item  w-100 ">
-                                        <a title="" href="#">
-                                            
-                                            <img style="height: 242px;object-fit: cover" src="{{asset('img/bhpi.jpg')}}" 
-                                                class="d-block w-100" alt="আঞ্চলিক পর্যায়ের সরকারি অফিস">
-                                        </a>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <!--/carousel-->
@@ -653,42 +630,14 @@
                                 padding: 5px 0px !important;
                             }
 
-                            /* .menu .home {
-        display: flex;
-        align-items: center;
-    }
-    
-    .menu .home a {
-        
-        height: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-    } */
 
-                            /* .menu .sub-menu {
-        position: absolute;
-        z-index: 600;
-        padding: 10px 0;
-        left: 0px;
-        opacity: 0;
-        overflow: hidden;
-        display: none;
-        background-color: #ffffff;
-        border: 1px solid #dedede;
-        width: 100%;
-    } */
 
                             .menu .mzr-drop:hover .sub-menu {
                                 display: flex;
                                 opacity: 1;
                             }
 
-                            /* .menu .sub-menu>div {
-        width: 150px;
-        margin: 10px;
-        font-size: 14px;
-        line-height: 21px;
-    } */
+
 
                             .menu .sub-menu>div h6 {
                                 font-weight: bold;
@@ -1062,8 +1011,6 @@
             
             
             
-                        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
-                        <script async type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
                         <div class="block service-list">
                             <h5 class="bk-org title eservice-title ces_title">অধ্যক্ষ , ভোলা পলিটেকনিক ইনস্টিটিউট</h5>
                             <div>
@@ -1071,24 +1018,8 @@
                                     height="100%">
                             </div>
                         </div>
-            
-                        <style>
-                            .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-                                background-color: #444;
-                                width: 10px;
-                            }
-                        </style>
-            
-                        <script>
-                            $(function () {
-                                $(window).on("load", function () {
-                                    $(".service-list-scroll").mCustomScrollbar({
-                                        setHeight: 250,
-                                        //theme: "light-thick"
-                                    });
-                                });
-                            });
-                        </script>
+
+
             
             
             

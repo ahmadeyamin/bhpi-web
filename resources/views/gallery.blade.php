@@ -11,14 +11,13 @@
         <div class="row mt-4">
             @forelse ($galleries as $gallery)
             <div class="col-md-4 col-sm-6">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top p-1" src="{{$gallery->image_url}}" alt="Card image cap">
+                <div class="card mb-3">
+                    <img class="p-1 w-100" src="{{$gallery->image_url}}" alt="{{$gallery->title}}">
                     <div class="card-body mt-3">
                         <p class="text-muted text-center">{{$gallery->created_at->diffForHumans()}}</p>
                         <h5 class="card-title text-center">{{$gallery->title}}</h5>
-                        
                     </div>
-                  </div>
+                </div>
             </div>
             @empty
 

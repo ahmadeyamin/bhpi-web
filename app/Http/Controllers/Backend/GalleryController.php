@@ -100,39 +100,23 @@ class GalleryController extends Controller
     {
         // return $request;
         $request->validate([
-            "name" => "required",
             "title" => "required",
-            "education" => "required",
-            "email" => "nullable|email",
-            "phone" => "nullable|min:11",
-            "message" => "nullable",
-            "avatar" => "nullable|image|max:1024",
-            'technology' => "nullable|exists:technologies,id",
-            'managements.*' => "nullable|exists:management,id"
+            "image" => "nullable|image|max:1024",
         ]);
 
-        if ($request->file('avatar')) {
-            $path = $request->file('avatar')->store('/galleries',[
+        if ($request->file('image')) {
+            $path = $request->file('image')->store('/galleries',[
                 'disk' => 'public'
             ]);
         }else{
-            $path = $gallery->avatar;
+            $path = $gallery->url;
         }
 
         $gallery->update([
-            "name" => $request->name,
             "title" => $request->title,
-            "education" => $request->education,
-            "email" => $request->email,
-            "phone" => $request->phone,
-            "message" => $request->message,
-            "avatar" => $path,
-            "sort" => $request->sort,
-            "technology_id" => $request->technology,
+            "url" => $path,
+            "pined" => $request->has("pined"),
         ]);
-
-        
-        $gallery->managements()->sync($request->managements);
 
         
         return redirect(route('admin.gallery.index'))->with('success','gallery Updated Successfully');

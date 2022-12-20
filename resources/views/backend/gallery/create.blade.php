@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label" for="pined">Pined</label>
+                    <label class="form-label" for="pined">In Pined</label>
                     <input class="form-control-checkbox" name="pined" id="pined" type="checkbox" />
                     <x-error name="file"/>
                 </div>

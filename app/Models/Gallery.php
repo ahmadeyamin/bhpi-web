@@ -20,4 +20,9 @@ class Gallery extends Model
             return null;
         }
     }
+
+    public function scopeBanner()
+    {
+        return $this->wherePined(true);
+    }
 }
