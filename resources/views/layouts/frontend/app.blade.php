@@ -1130,18 +1130,8 @@
                     <div class="footer-artwork" id="footer-artwork">&nbsp;</div>
                     <div class="footer-wrapper full-width" id="footer-wrapper">
                         <div id="footer-menu">
-                            <div style="float: left; font-size: .9em;">
-                                সাইটটি শেষ হাল-নাগাদ করা হয়েছে:
-                                <span style="font-style: italic;">
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    ২০২২-০৯-২০ ১২:৪৬:২১
-
-
-                                </span>
+                            <div style="float: left; font-size: 1em;font-weight: bold">
+                                ডেভেলপার: <i><a href="https://fb.me/ahmadeyamin" target="_blank" >ইয়ামিন</a>, <a href="https://fb.me/mdmajarulislam.mahim" target="_blank" >শাকিল</a>, <a href="https://fb.me/MuhammadMahfuz00" target="_blank" >মাহফুজ</a></i>
                             </div>
                         </div>
 

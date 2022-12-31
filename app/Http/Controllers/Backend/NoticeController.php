@@ -40,7 +40,7 @@ class NoticeController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'file' => 'required|file|mimes:pdf',
+            'file' => 'required|file|mimes:pdf,doc,docx,png,jpg,jpeg,xls,xlsx',
         ]);
 
         $path = $request->file('file')->store('/notices',[
@@ -89,7 +89,7 @@ class NoticeController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'file' => 'nullable|file|mimes:pdf',
+            'file' => 'nullable|file|mimes:pdf,doc,docx,png,jpg,jpeg,xls,xlsx',
         ]);
 
         if ($request->filled('file')) {
@@ -115,8 +115,10 @@ class NoticeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Notice $notice)
     {
-        //
+        $notice->delete();
+
+        return redirect(route('admin.notice.index'))->with('success','Notice deleted Successfully');
     }
 }
