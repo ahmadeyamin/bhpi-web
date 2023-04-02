@@ -35,4 +35,12 @@ class HomeController extends Controller
         ->get();
         return view('gallery', compact('type','galleries'));
     }
+
+    public function notices()
+    {
+
+        $notices = Notice::latest()->paginate(50);
+        return view('notices',compact('notices'));
+
+    }
 }

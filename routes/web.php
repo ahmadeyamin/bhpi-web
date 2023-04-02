@@ -28,5 +28,6 @@ Route::get('test', function () {
 // Auth::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 // Auth::post('login', 'Auth\LoginController@login');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/notices', [HomeController::class, 'notices'])->name('notices.index');
 Route::get('/gallery/{type}', [HomeController::class, 'gallery'])->name('gallery');
 Route::get('/technology/{technology:slug}', [TechnologyController::class, 'show'])->name('technology.show');

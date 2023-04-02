@@ -94,10 +94,10 @@
 
 
                         <div class="top-menu">
-                            <div class="">
+                            {{-- <div class="">
                                 <h2 class="h5 font-weight-bold mb- text-center">Website is under development</h2>
 
-                            </div>
+                            </div> --}}
 
                         </div>
                         

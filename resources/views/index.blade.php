@@ -43,7 +43,7 @@
                         @endforeach
                     </ul>
                     <div class="clearfix">
-                        <a href="#" title="সকল " class="btn right">সকল </a>
+                        <a href="{{ route('notices.index') }}" title="সকল " class="btn right">সকল </a>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div>
-                <a href="#" title="সকল " class="btn">সকল
+                <a href="{{ route('notices.index') }}?pined" title="সকল" class="btn">সকল
                 </a>
             </div>
         </div>
