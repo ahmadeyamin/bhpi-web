@@ -26,7 +26,7 @@
 
                 <div class="mb-3">
                     <label class="form-label" for="name">Name</label>
-                    <input class="form-control" value="{{ $service->name }}" name="name" id="name" type="text" placeholder="Name"
+                    <input class="form-control" value="{{ old('name') }}" name="name" id="name" type="text" placeholder="Name"
                         data-sb-validations="required" />
                     <x-error name="name"/>
                 </div>
