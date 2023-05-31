@@ -1,16 +1,16 @@
 @extends('layouts.backend.app')
 
 
-@section('title','All Technology')
+@section('title','All services')
 
 @section('content')
 <div class="page-title d-flex justify-content-between">
     <div>
-        <h3>Technology</h3>
+        <h3>Services</h3>
         <p class="text-subtitle text-muted">Monitor your account usages</p>
     </div>
     <div>
-        <a href="{{ route('admin.technology.create') }}" class="btn btn-primary">Add New</a>
+        <a href="{{ route('admin.service.create') }}" class="btn btn-primary">Add New</a>
     </div>
 </div>
 <div class="row mb-2">
@@ -22,26 +22,25 @@
                       <thead>
                         <tr>
                           <th>ID</th>
+                          <th>Image</th>
                           <th>Name</th>
-                          <th>Phone</th>
-                          <th>Email</th>
-                          <th>Teachers</th>
+                          <th>Links</th>
                           <th>Date</th>
                           <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
 
-                        @forelse ($technologies as $technology)
+                        @forelse ($services as $service)
                         <tr>
-                            <td class="text-bold-500">{{$technology->id}}</td>
-                            <td>{{$technology->name}}</td>
-                            <td>{{$technology->phone}}</td>
-                            <td>{{$technology->email}}</td>
-                            <td>{{$technology->teachers_count}}</td>
-                            <td>{{$technology->created_at->format('Y-m-d')}}</td>
+                            <td class="text-bold-500">{{$service->id}}</td>
+                            <td class="text-bold-500"><img src="{{$service->image_url}}" class="rounded-circle" height="50px" width="50px" alt=""/></td>
+                            <td>{{$service->name}}</td>
+
+                            <td>{{$service->links_count}}</td>
+                            <td>{{$service->created_at->format('Y-m-d')}}</td>
                             <td>
-                                <a href="{{ route('admin.technology.edit',$technology) }}">
+                                <a href="{{ route('admin.service.edit',$service) }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                                         <path d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32l8.4-8.4z" />
                                         <path d="M5.25 5.25a3 3 0 00-3 3v10.5a3 3 0 003 3h10.5a3 3 0 003-3V13.5a.75.75 0 00-1.5 0v5.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5V8.25a1.5 1.5 0 011.5-1.5h5.25a.75.75 0 000-1.5H5.25z" />

@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\TeacherController;
 use App\Http\Controllers\Backend\Auth\LoginController;
 use App\Http\Controllers\Backend\ManagementController;
+use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\TechnologyController;
 
 Route::group(['as' => 'admin.','middleware'=>['auth:admin']],function(){
@@ -17,6 +18,7 @@ Route::group(['as' => 'admin.','middleware'=>['auth:admin']],function(){
     Route::resource('management', ManagementController::class);
     Route::resource('technology', TechnologyController::class);
     Route::resource('teacher', TeacherController::class);
+    Route::resource('service', ServiceController::class);
     Route::resource('gallery', GalleryController::class);
     Route::get('files', [FileController::class,"index"])->name("files");
 

@@ -23,6 +23,13 @@
     </li>
 
     <li class="sidebar-item">
+        <a href="{{ route('admin.service.index') }}" class='sidebar-link'>
+            <i data-feather="server" width="20"></i>
+            <span>Services</span>
+        </a>
+    </li>
+
+    <li class="sidebar-item">
         <a href="{{ route('admin.technology.index') }}" class='sidebar-link'>
             <i data-feather="user" width="20"></i>
             <span>Technology</span>

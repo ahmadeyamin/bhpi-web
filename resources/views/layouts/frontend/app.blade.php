@@ -1097,7 +1097,14 @@
                             </div>
                         </div>
             
-            
+                        <div class="column block">
+                            <h5 class="bk-org title">
+                            জাতীয় সংগীত	
+                            </h5>
+                        <audio controls="" style="width:100%">
+                         <source src="{{ asset('assets/mp3/bd_national_anthem.mp3') }}" type="audio/mp3">
+                        </audio>
+                        </div>
             
                         <div class="block" aria-selected="true" tabindex="0">
                             <h5 class="title">জরুরি হটলাইন</h5>

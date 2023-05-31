@@ -86,6 +86,22 @@
             });
 
         </script>
+
+        <div class="column block">
+            <h5 class="bk-org title">
+                পরিচিতি  	</h5>
+        
+        <p style="text-align:justify"><strong>কারিগরি শিক্ষা অধিদপ্তর, গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের শিক্ষা মন্ত্রণালয়াধীন কারিগরি ও মাদ্‌রাসা শিক্ষা বিভাগের একটি অধিদপ্তর। কারিগরি শিক্ষার সম্প্রসারণ ও মানোন্নয়নের মাধ্যমে দক্ষ মানব সম্পদ সৃষ্টির লক্ষ্যে ১৯৬০ সালে এটি প্রতিষ্ঠিত হয় । গত অর্ধ শতকে কারিগরি শিক্ষা ও প্রশাসনের বহু শাখা-প্রশাখার বিস্তার ঘটেছে। অধিদপ্তরের মূল কাজ ৪টি যথাঃ মানব সম্পদ ব্যবস্থাপনা, উন্নয়ন কর্মকান্ড পরিচালনা, একাডেমিক কার্যক্রমের তদারকীকরণ এবং কারিগরি শিক্ষা সংশ্লিষ্ট দেশীয় ও আন্তর্জাতিক সংস্থার সঙ্গে সংযোগ সৃষ্টি করা।</strong></p>
+        <br>
+        <p style="text-align:justify"><strong>অধিদপ্তরাধীন সরকারি শিক্ষা প্রতিষ্ঠানের মোট&nbsp;সংখ্যা ২০৫ টি। তিনটি স্তরে পাঠদান কার্যক্রম পরিচালিত হয়। যথাঃ সার্টিফিকেট স্তর, ডিপ্লোমা স্তর ও ডিগ্রী স্তর। সার্টিফিকেট পর্যায়ে রয়েছে ১৪৯টি সরকারি টেকনিক্যাল স্কুল ও কলেজ এবং ১টি ভোকেশনাল টিচার্স ট্রেনিং ইনষ্টিটিউট। ডিপ্লোমা পর্যায়ে ৫০টি পলিটেকনিক ইনষ্টিটিউট এবং ডিগ্রী পর্যায়ে ১টি টেকনিক্যাল টিচার্স ট্রেনিং কলেজ ও ৪টি ইঞ্জিনিয়ারিং কলেজ রয়েছে।</strong></p>
+        <br>
+        <p style="text-align:justify"><strong>কারিগরি শিক্ষা অধিদপ্তরটি এফ-৪/বি, শের-ই-বাংলা নগর প্রশাসনিক এলাকা, আগারগাঁও, ঢাকা-১২০৭ এ অবস্থিত।</strong></p>
+        <br>
+        <p style="text-align:justify">&nbsp;</p>
+        <p>
+            </p>
+        </div>
+
         <div class="row service-row">
             <div class="col-md-6">
                 <div class="service-box box">
@@ -211,6 +227,35 @@
             
 
             
+        </div>
+
+        <div class="row service-row">
+
+            @foreach ($services as $service)
+            <div class="col-md-6">
+                <div class="service-box box">
+                    
+                    <h4>{{$service->name}}</h4>
+                    
+                    <img src="{{$service->image_url}}" alt="{{$service->name}}" width="110"
+                        style="max-width:700px;">
+                    <ul class="caption fade-caption" style="margin:0">
+                      
+                        @foreach ($service->links as $link)
+                        <li>
+                            <i class="text-green fa fa-caret-right"></i>
+                            <a href="{{$link->url}}" title="{{$link->name}}">
+                                {{$link->name}}
+                            </a>
+                        </li>
+                        @endforeach
+                        
+                    </ul>
+                </div>
+            </div>
+            @endforeach
+            
+
         </div>
 
         
