@@ -60,6 +60,12 @@ return [
                 'image/gif',
                 'application/pdf',
                 'text/plain',
+                'application/msword',
+                'application/vnd.ms-excel',
+                'application/vnd.ms-powerpoint',
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                'video/mp4',
+                'video/mp3'
             ],
         ],
         'image' => [
@@ -74,6 +80,12 @@ return [
                 'image/pjpeg',
                 'image/png',
                 'image/gif',
+                'application/msword',
+                'application/vnd.ms-excel',
+                'application/vnd.ms-powerpoint',
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                'video/mp4',
+                'video/mp3'
             ],
         ],
     ],

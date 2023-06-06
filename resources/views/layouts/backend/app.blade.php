@@ -94,10 +94,10 @@
                             <div class="dropdown-menu dropdown-menu-end">
                                 {{-- <a class="dropdown-item" href="{{ route('me') }}"><i data-feather="user"></i> Account</a>
                                 <a class="dropdown-item" href="{{ route('profile_edit') }}"><i data-feather="settings"></i> Settings</a> --}}
-                                <div class="dropdown-divider"></div>
+                               
                                 <a class="dropdown-item" onclick="document.getElementById('logout').submit()" href="#"><i data-feather="log-out"></i> Logout</a>
                             </div>
-                            <form id="logout" action="{{ route('logout') }}" method="post">
+                            <form id="logout" action="{{ route('admin.logout') }}" method="post">
                                 @csrf
                             </form>
                         </li>
@@ -122,6 +122,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" ></script>
     <script src="{{asset('assets/js/feather-icons/feather.min.js')}}"></script>
     <script src="{{asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
