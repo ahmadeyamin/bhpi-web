@@ -113,7 +113,7 @@
                         <p>{{date('Y')}} &copy; Ahmad Eyamin</p>
                     </div>
                     <div class="float-end">
-                        <p>Crafted with <span class='text-danger'><i data-feather="heart"></i></span> by <a href="https://Ahmad Eyamin.com">Ahmad Eyamin</a></p>
+                        <p>Crafted with <span class='text-danger'><i data-feather="heart"></i></span> by <a href="https://fb.com/ahmadeyamin">Ahmad Eyamin</a></p>
                     </div>
                 </div>
             </footer>
@@ -124,7 +124,6 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
     <script src="{{asset('assets/js/feather-icons/feather.min.js')}}"></script>
     <script src="{{asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-    <script src="{{asset('assets/js/app.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
 
 

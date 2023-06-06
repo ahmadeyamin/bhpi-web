@@ -33,7 +33,7 @@
                         class="position-absolute right-0 top-0 btn" 
                         style="right:0"
                         x-show="link.id != 0"
-                        x-on:click="links = links.filter(item => item !== item.id)"
+                        x-on:click="links = links.filter(item => item.id !== link.id)"
                         >❌</button>
                     <div class="row px-3 py-2">
                         <div class="mb-3 col-6">
